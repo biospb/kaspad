@@ -310,7 +310,7 @@ func TestOrphanTransactions(t *testing.T) {
 			}
 		}
 
-		block, err := miningManager.GetBlockTemplate(&externalapi.DomainCoinbaseData{
+		block, _, err := miningManager.GetBlockTemplate(&externalapi.DomainCoinbaseData{
 			ScriptPublicKey: &externalapi.ScriptPublicKey{Script: nil, Version: 0},
 			ExtraData:       nil})
 		if err != nil {
