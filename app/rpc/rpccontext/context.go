@@ -21,6 +21,7 @@ type Context struct {
 	UTXOIndex         *utxoindex.UTXOIndex
 	ShutDownChan      chan<- struct{}
 	IsSynced          bool
+	Submitted         uint32
 
 	NotificationManager *NotificationManager
 }
@@ -45,6 +46,7 @@ func NewContext(cfg *config.Config,
 		UTXOIndex:         utxoIndex,
 		ShutDownChan:      shutDownChan,
 		IsSynced:          false,
+		Submitted:         0,
 	}
 	context.NotificationManager = NewNotificationManager()
 
